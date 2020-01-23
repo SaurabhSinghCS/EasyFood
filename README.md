@@ -1,2 +1,2 @@
-# EasyFood
-Mini Project 2 :- EasyFood Website for Food Ordering
+# Food-ordering-web-application
+Mini-project-1 :- website of food ordering application
