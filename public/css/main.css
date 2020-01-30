@@ -1,0 +1,1121 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: auto;
+}
+
+.header {
+    height: 700px;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes header {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.top-navbar {
+    position: relative;
+    z-index: 170;
+}
+
+.top-navbar .navbar {
+    padding: 15px 0px;
+    position: fixed;
+    width: 100%;
+    border-radius: 0px 0px 100px 100px;
+    transition: height .3s ease-out, background .3s ease-out, box-shadow .3s ease-out;
+    transform: translate3d(0, 0, 0);
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+.top-navbar .navbar-light .navbar-nav .nav-link {
+    color: #010101;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.top-navbar .navbar-light .navbar-nav .nav-item .nav-link:hover {
+    background: #d65106;
+    color: #ffffff;
+}
+
+.top-navbar .navbar-light .navbar-nav .nav-item.active .nav-link {
+    background: #d65106;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+    box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu a {
+    padding: 10px 10px;
+    text-transform: uppercase;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu a.dropdown-item:hover {
+    background: #d65106;
+    color: #ffffff;
+}
+
+.navbar-light .navbar-toggler:hover {
+    background: #d65106;
+}
+
+.navbar1 {
+    width: 100px;
+    height: 66px;
+}
+
+.navbar2 {
+    margin-left: 35%;
+}
+@media only screen and (max-width: 768px) {
+    .navbar2 {
+        margin-left: 3%;
+        width: 50%;
+    }
+    .navbar1 {
+        margin-left: 8%;
+        width: 16%;
+        height: 40px;
+    }
+    .navbar-toggler {
+        margin-left: 80%;
+        margin-top: -15%;
+    }
+}
+.cont1 {
+    width: 100%;
+    height: 50%;
+    margin-top: 10%;
+    position: absolute;
+    z-index: 100;
+    background-color: transparent;
+}
+
+.rw-wrapper {
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    z-index: 120;
+    margin-top: 8%;
+}
+
+.rw-words-1 {
+    font-size: 63px;
+    margin-left: 4%;
+    width: 90%;
+    height: 40%;
+    animation: rotateWordsFirst 5s linear 0s;
+    color: white;
+    font-style: italic;
+}
+
+.rw-words-2 {
+    width: 60%;
+    height: 30%;
+    margin-top: -1.5%;
+    margin-left: 18%;
+    font-size: 45px;
+    color: white;
+    animation: rotateWordsSecond 2s linear 0s;
+}
+
+@keyframes rotateWordsFirst {
+    0% {
+        font-size: 5px;
+        opacity: 0;
+        width: 0px;
+    }
+
+    5% {
+        font-size: 25px;
+        opacity: 0.1;
+        width: 50%;
+    }
+
+    17% {
+        font-size: 35px;
+        opacity: 0.4;
+        width: 100%;
+    }
+
+    20% {
+        font-size: 50px;
+        opacity: 0.4;
+    }
+
+    50% {
+        font-size: 63px;
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotateWordsSecond {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-100%) rotate(-240deg);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateX(-50%) rotate(-120deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px) rotate(0deg);
+    }
+}
+
+#cool {
+    width: 2%;
+    height: 77%;
+    margin-left: 15%;
+    border-left: 5px solid rgb(126, 199, 255);
+    border-right: 5px solid rgb(126, 199, 255);
+    margin-top: -2.8%;
+    animation: grow 3s forwards;
+    animation-delay: 2s;
+    position: absolute;
+    z-index: 253;
+    transform-origin: 0 100%;
+    transform: rotateZ(90deg);
+    opacity: 0;
+}
+
+#cool1 {
+    width: 2%;
+    height: 78.5%;
+    margin-left: 82%;
+    border-left: 5px solid rgb(126, 199, 255);
+    border-right: 5px solid rgb(126, 199, 255);
+    margin-top: -1%;
+    animation: grow1 3s forwards;
+    animation-delay: 2s;
+    position: absolute;
+    z-index: 253;
+    transform-origin: 0 100%;
+    transform: rotateZ(-90deg);
+    opacity: 0;
+}
+
+@keyframes grow {
+    0% {
+        opacity: 0;
+        height: 250px;
+        transform: rotateZ(0deg);
+
+        animation-timing-function: ease-in;
+    }
+
+    50% {
+        opacity: 0.5;
+        height: 250px;
+        transform: rotateZ(45deg);
+
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        opacity: 1;
+        height: 250px;
+        transform: rotateZ(90deg);
+
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes grow1 {
+    0% {
+        height: 250px;
+        transform: rotateZ(0deg);
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+
+    50% {
+        height: 250px;
+        transform: rotateZ(-45deg);
+        opacity: 0.5;
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        height: 250px;
+        transform: rotateZ(-90deg);
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .rw-words-1 {
+        font-size: 25px;
+        margin-top: 25%;
+    }
+
+    .rw-words-2 {
+        font-size: 20px;
+        margin-top: -10%;
+    }
+
+    #cool {
+        margin-top: 33%;
+        height: 20%;
+        width: 1%;
+    }
+
+    #cool1 {
+        margin-top: 35.5%;
+        height: 20%;
+        width: 1%;
+    }
+}
+
+.input-group {
+    width: 67%;
+    height: 100px;
+    position: absolute;
+    border-radius: 50px;
+    background-color: transparent;
+    margin-top: 28%;
+    padding: 2px;
+    z-index: 162;
+    left: 15%;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+    color: rgb(216, 208, 208);
+    text-align: left !important;
+    padding-left: 40px;
+}
+
+.form-control {
+    border: 0;
+    position: absolute;
+    border-bottom: 2px solid darkgrey;
+    border-radius: 8px !important;
+    background-color: transparent;
+    margin-left: 25%;
+    width: 50%;
+    color: white !important;
+    height: 70%;
+    font-size: 28px;
+    padding-left: 8%;
+    padding-top: 2%;
+    box-shadow: none !important;
+    line-height: normal;
+}
+
+.iconic {
+    width: 35px;
+    height: 35px;
+    margin-left: 27%;
+    margin-top: 2.7%;
+    position: absolute;
+    z-index: 215;
+    visibility: hidden;
+}
+
+.input-group-text {
+    position: absolute;
+    z-index: inherit;
+    width: 120px;
+    height: 54px;
+    margin-left: 76%;
+    margin-top: 1%;
+    background-image: linear-gradient(#00ff7e, #1f3d90);
+    font-size: 24px;
+    border: 0 !important;
+    color: white !important;
+    padding: 4px 10px 7px 24px !important;
+    border-radius: 30px !important;
+    box-shadow: none !important;
+}
+
+input[type=text]:focus {
+    border-bottom: 2px solid rgba(169, 169, 169, 0.534);
+    background-color: transparent;
+}
+
+.form-control:focus+.iconic {
+    visibility: visible;
+}
+
+@media only screen and (max-width: 768px) {
+    * {
+        transition: none;
+        animation-name: none;
+    }
+
+    .input-group {
+        margin-top: 65%;
+        width: 100%;
+        margin-left: -15%;
+    }
+
+    .form-control {
+        font-size: 20px;
+        width: 60%;
+        margin-left: 15%;
+        padding-left: 40px;
+    }
+
+    #icon {
+        margin-left: 14%;
+        margin-top: 5%;
+    }
+
+    .input-group-text {
+        width: 90px;
+        height: 40px;
+        font-size: 17px;
+        margin-top: 5%;
+    }
+
+    input[type="text"]::-webkit-input-placeholder {
+        padding-left: 10px;
+    }
+}
+
+/* FeedBack CSS Starts from here */
+.feedback {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/banner3.jpg');
+    padding: 80px 0;
+    background-attachment: fixed;
+    margin-top: 40%;
+    background-size: 100% 100%;
+    display: none;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.h1h1 {
+    font-family: cursive;
+    font-weight: 300;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+}
+
+input:focus~label,
+textarea:focus~label,
+input:valid~label {
+    font-size: 0.75em;
+    color: gray;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+}
+
+.styled-input {
+    width: 80%;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+.styled-input label {
+    color: #999;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.feedback input,
+.feedback textarea {
+    padding: 30px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: white;
+    color: black;
+    border-radius: 4px;
+}
+
+.feedback input:focus,
+.feedback textarea:focus {
+    background-color: white;
+    outline: 0;
+    border: 0;
+}
+
+.submit-btn {
+    width: 130px;
+    padding: 8px 0;
+    outline: none !important;
+    border: 2px solid white;
+    border-radius: 50px;
+    background: transparent;
+    font-size: larger;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+.anima1 {
+    width: 100%;
+    position: relative;
+    display: block;
+    height: 500px;
+
+}
+
+.anima1 span {
+    font-size: 35px;
+    position: absolute;
+    margin-left: 30%;
+    font-family: cursive;
+    padding-top: 35px;
+    color: #515151;
+    font-style: bold;
+    font-weight: 600;
+}
+
+#st1 {
+    font-size: 30px;
+    position: absolute;
+    font-family: sans-serif;
+    color: #E24425;
+    font-style: italic;
+    margin-top: 20px;
+    margin-left: 41%;
+}
+
+.lin1 {
+    position: absolute;
+    display: block;
+    margin-top: 45px;
+    margin-left: 270px;
+    width: 260px;
+    border-top: 2px dotted black;
+}
+
+.lin2 {
+    width: 260px;
+    border-top: 2px dotted black;
+    color: green;
+    position: absolute;
+    margin-left: 950px;
+    margin-top: 45px;
+    animation: slideOut 2s forwards;
+    animation-timing-function: ease-out;
+}
+
+.imgs {
+
+    width: 70%;
+    height: 250px;
+    margin: auto;
+    margin-top: 100px;
+
+}
+
+.imgs img {
+
+    position: relative;
+    width: 190px;
+    height: 240px;
+    margin-top: 5px;
+    margin-left: 40px;
+}
+@media only screen and (max-width:768px) {
+    * {
+        animation-name: none;
+        transition: none;
+    }
+    .anima1 span {
+        font-size: 22px;
+        margin-left: 10%;
+    }
+    .imgs {
+        width: 100%;
+        margin-left: 15%;
+        margin-top: 20%;
+    }
+    .imgs img {
+        width: 150px;
+        height: 130px;
+        margin-left: 0;
+    }
+    .lin1,.lin2 {
+        display: none;
+    }
+    #st1 {
+        font-size: 20px;
+        margin-left: 33%;
+    }
+} 
+
+
+/* Aniam1 ($ images ) CSS ends here */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#rege {
+    position: relative;
+    display: block;
+    background-color: #4CAF50;
+    color: white;
+    margin-left: 45px;
+    border: none;
+    font-size: 19px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    width: 70%;
+}
+
+#rege:hover {
+    opacity: 0.8;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 210;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.527);
+    padding-top: 60px;
+}
+
+.boxlog {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+.boxlog:nth-child(1) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+    background-image: linear-gradient(to right, rgb(2, 15, 14), rgb(0, 153, 255));
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    width: 330px;
+    height: 400px;
+    background: transparent;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 0 30px;
+    margin-top: -20px;
+    padding: 0px;
+    color: white;
+}
+
+.boxlog .inputbox {
+    position: relative;
+    width: 100%;
+    background: transparent;
+}
+
+.boxlog .inputbox input {
+    width: 100%;
+    padding: 9px 0;
+    font-size: 16px;
+    color: white;
+    margin-bottom: -5px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+}
+
+.boxlog .inputbox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    padding: 9px 0;
+    font-size: 19px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.boxlog .inputbox input:focus~label,
+.boxlog .inputbox input:valid~label {
+    top: -13px;
+    left: 0;
+    color: deepskyblue;
+    font-size: 14px;
+}
+
+.boxlog button[type="submit"] {
+    margin-top: 4px;
+    margin-left: 35%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    background: transparent;
+    /* padding: 5px 18px; */
+    width: 140px;
+    height: 50px;
+    padding-bottom: 4px;
+    border-radius: 14px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.767);
+}
+
+.boxlog button[type="submit"]:hover {
+    background: deepskyblue;
+    transform: scale(1.2);
+    transition: 0.5s;
+    border: 1px solid deepskyblue;
+
+}
+
+.cancelbtn {
+    margin-left: 90px;
+    margin-top: 60px;
+    width: 40%;
+    padding: 10px 20px;
+    font-size: 19px;
+    color: white;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f81c1cbb;
+}
+
+.animate {
+    animation: animatezoom 0.5s
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+#reg1 {
+    text-align: center;
+    margin: 0 0 30px;
+    padding: 0px;
+    color: white;
+}
+
+.features {
+    padding: 100px 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.726), rgba(0, 0, 0, 0.6)), url(https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/banner21.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.feature-img img {
+    width: 100%;
+}
+
+.ratings {
+    color: gold;
+}
+
+.price {
+    color: red;
+    padding: 7px
+}
+
+.summary {
+    color: grey;
+    padding: 10px
+}
+
+.placename {
+    color: black;
+    font-family: cursive;
+    padding: 15px;
+}
+
+.feature-box {
+    background-color: white;
+    box-shadow: 0 0 10px 1px rgba(37, 73, 214, 0.18);
+    margin-bottom: 50px;
+
+}
+
+.feature-box:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.feature-img:hover {
+    cursor: pointer;
+}
+
+.gallery {
+    padding: 100px 0;
+    background-color: lightgray;
+}
+
+.gallery-box img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.gallery-box img:hover {
+    transform: scale(1.1);
+}
+
+.gallery-box h4 {
+
+    font-weight: 600;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.gallery-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.aboutus {
+    padding: 100px;
+    height: 500px;
+    background-color: black;
+}
+
+.info {
+    padding: 35px 35px 35px 35px;
+    margin: 5px 35px 35px 35px;
+
+    box-sizing: border-box;
+    /* width: 50%; */
+
+    height: 350px;
+    float: left;
+
+}
+
+.gtch {
+    padding: 35px 35px 35px 35px;
+    margin: 5px 35px 35px 35px;
+    box-sizing: border-box;
+
+    width: 30%;
+    height: 350px;
+    float: right;
+}
+
+.uselik {
+    padding: 35px 35px 35px 35px;
+    margin: 5px 35px 35px 35px;
+    width: 25%;
+    height: 350px;
+    float: right;
+}
+
+.social a:hover {
+    transform: scale(1.5);
+}
+
+.features1 {
+    padding: 110px 0;
+    background-color: rgba(173, 216, 230, 0.089);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#lin {
+    border-top: 2px dotted grey;
+}
+
+.list-group-item {
+    margin-top: 15%;
+    border-top: 0;
+    text-align: center;
+    font-size: 24px;
+    font-family: cursive;
+}
+
+.list-group a:hover {
+    background-color: orange;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 26px;
+}
+
+.list-group a:focus {
+    background-color: red;
+    color: white;
+    font-size: 26px;
+    border-radius: 5px;
+}
+
+#img11 {
+    margin-top: 2%;
+    margin-left: 3%;
+    height: 220px;
+    padding: 0;
+    border: 1px solid rgba(169, 169, 169, 0.301);
+}
+
+#img22 {
+    margin-top: 2%;
+    padding: 0;
+    margin-left: 10%;
+    height: 220px;
+    border: 1px solid rgba(169, 169, 169, 0.301);
+}
+
+#img33 {
+    margin-top: 5%;
+    padding: 0;
+    margin-left: 3%;
+    height: 220px;
+    border: 1px solid rgba(169, 169, 169, 0.301);
+}
+
+#img44 {
+    margin-top: 5%;
+    padding: 0;
+    margin-left: 10%;
+    height: 220px;
+    border: 1px solid rgba(169, 169, 169, 0.301);
+}
+
+#pizza {
+    display: none;
+}
+
+#burger {
+    display: none;
+}
+
+#paneer {
+    display: none;
+}
+
+#icecream {
+    display: none;
+}
+
+.figure-img {
+    width: 100%;
+    height: 112px;
+}
+
+.figure {
+    position: relative;
+    overflow: hidden;
+}
+
+.figure-caption {
+    padding: 0;
+    margin-top: -8px;
+    font-family: cursive;
+    overflow: hidden;
+    font-size: 24px;
+    text-align: center;
+    font-style: normal;
+    background-color: rgba(169, 169, 169, 0.301);
+    color: #515151;
+    border-radius: 2px;
+}
+
+.figure-caption:last-child {
+    margin-top: 0px;
+}
+
+.cart-btn {
+    position: absolute;
+    width: 70px;
+    height: 59px;
+    margin-left: 40%;
+    margin-top: 16%;
+    background-image: linear-gradient(#00ff7e, #1f3d90);
+    font-size: 15px;
+    border: 0 !important;
+    color: white !important;
+    padding: 2px 10px 7px 10px !important;
+    border-radius: 30px !important;
+    box-shadow: none !important;
+    transition: all 0.8s ease-in-out;
+    transform: translate(300%, 300%);
+
+}
+
+.figure:hover .cart-btn {
+
+    transform: translate(0, 0);
+}
+
+.block11 {
+    margin-top: 10%;
+    height: 200px;
+    background-color: #A52A2A;
+    border-radius: 10px;
+}
+
+.img1123 {
+    height: 500px;
+    background-image: radial-gradient(white, lightgray, rgba(0, 0, 255, 0.527));
+}
+
+#elee {
+    font-style: bold;
+    font-family: cursive;
+    font-weight: 600;
+    color: #FFCC00;
+    font-size: 27px;
+    text-align: center;
+    padding-top: 20%;
+    padding-bottom: 25%;
+}
+
+#pic22 {
+    width: 1300px !important;
+}
+
+.lis22 {
+    margin-top: 7%;
+    margin-left: -8%;
+    background-color: transparent;
+}
+
+.lis33 {
+    background-color: transparent;
+    border: none;
+    margin-top: 0%;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: left;
+    color: white;
+    font-style: italic;
+    padding-left: 4%;
+}
+
+.ico {
+    color: #FFCC00;
+    padding-right: 4px;
+}
+
+#img333 {
+    margin-top: 4%;
+    width: 100%;
+}
+
+.ord {
+    display: block;
+    text-decoration: none;
+    background-color: yellow;
+    width: 70%;
+    height: 20%;
+    padding-top: 3%;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: #00CC00;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 40%;
+    margin-left: 10%;
+}
+
+.ord:hover {
+    text-decoration: none;
+    color: yellow;
+}
+
+#fdbk {
+    text-align: center;
+    margin-left: -35px;
+}
+
+#fdbkbtn {
+    height: 54px;
+    color: white;
+    background-image: linear-gradient(rgba(33, 33, 196, 0.808), rgba(0, 128, 0, 0.644));
+    margin-left: 45px;
+    height: 50px;
+    font-size: 18px;
+    border: 0 !important;
+    padding: 4px 10px 7px 12px !important;
+    border-radius: 30px !important;
+    box-shadow: none !important;
+    font-weight: bold;
+}
+
+#fdbkbtn:hover {
+    transition-duration: 0.7s;
+    transform: scale(1.3);
+}

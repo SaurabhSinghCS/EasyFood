@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 var passport = require("passport");
 var bodyParser = require("body-parser");
+var path = require('path');
 var User = require("./models/user");
 var LocalStrategy = require("passport-local");
 var passportLocalMongoose = require("passport-local-mongoose");
@@ -17,6 +18,7 @@ mongoose.connect("mongodb://localhost/food_app", function (err, db) {
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(require("express-session")({
     secret: "Rusty is the best og in the world",
     resave: false,
