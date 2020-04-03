@@ -1,10 +1,11 @@
 var mongoose = require("mongoose");
 var passport = require("passport");
 var bodyParser = require("body-parser");
-var path = require('path');
 var User = require("./models/user");
+var admin = require("./models/admin");
 var LocalStrategy = require("passport-local");
 var passportLocalMongoose = require("passport-local-mongoose");
+let cookieParser = require('cookie-parser');
 
 
 const express = require('express');
@@ -18,7 +19,6 @@ mongoose.connect("mongodb://localhost/food_app", function (err, db) {
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(require("express-session")({
     secret: "Rusty is the best og in the world",
     resave: false,
@@ -31,6 +31,7 @@ db.once('open', function(callback){
     console.log("connection succeeded"); 
 })
 
+var items=db.collection('food_item');
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
@@ -46,6 +47,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// feedback from / or starting page
 app.post('/', function(req,res){ 
     var Name = req.body.Name; 
     var email =req.body.email; 
@@ -66,6 +68,7 @@ db.collection('details').insert(data,function(err, collection){
     return res.redirect('/'); 
 })
 
+// feedback from logedin page
 app.post('/in', function(req,res){ 
     var Name = req.body.Name; 
     var email =req.body.email; 
@@ -86,8 +89,13 @@ db.collection('details').insert(data,function(err, collection){
     return res.redirect('/in'); 
 })
 
+//for main page
 app.get("/", function (req, res) {
-    res.render("index");
+    items.find().sort({catagories : -1}).toArray(function(err,data){
+        if(err) throw err;
+        res.render("index",{data:data});
+        console.log(data)
+    });
 });
 
 
@@ -107,19 +115,21 @@ app.post("/register", function (req, res) {
     });
 });
 
-// Login Routes
 
-
+// after login
 app.get("/in",isLoggedIn, function (req, res) {
-    res.render("in",{name: req.user.username});
-    console.log(req.user.username);
+    items.find().sort({catagories : -1}).toArray(function(err,data){
+        if(err) throw err;
+        res.render("in",{data:data,user: req.user});
+        console.log(req.user);
+    });
 });
 app.get("/",isLoggedIn, function (req, res) {
-    res.render("in",{name: req.user.username});
+    res.redirect('/in');
 });
 
 
-// middleware
+// Login Routes
 app.post("/login", passport.authenticate("local", {
     successRedirect: "/in",
     failureRedirect: "/"
@@ -137,6 +147,7 @@ app.get("/in/profile",function(req, res){
     res.render("profile.ejs",{user: req.user})
 })
 
+// profile edit
 app.get("/in/profileedit",function(req, res){
     res.render("profileedit",{user: req.user})
 })
@@ -226,15 +237,85 @@ app.post("/in1", function(req, res){
     res.redirect("/payment")
 }
 })
+app.post('/admin_register',function(req,res){
+    admin.register(new admin({ username: req.body.username,email: req.body.email,name: req.body.name,mobile: req.body.mob_number }),req.body.password, function (err, user) {
+        if (err) {
+            console.log(err);
+            return res.render('/admin_register');
+        } //admin stragety
+        passport.authenticate("local")(req, res, function () {
+            console.log(req.body.name)
+            console.log(req.body.username)
+            console.log(req.body.email)
+            res.redirect("/admin_login"); //once the user sign up
+        });
+    });
+});
+app.post("/admin_login", passport.authenticate("local", {
+    successRedirect: "/admin",
+    failureRedirect: "/admin_login"
+}), function (req, res) {
+    res.send("User is " + req.user.id);
+});
+
+app.get('/admin_register',function(req, res){
+    res.render("admin_log_sign",{a:'register'})
+});
+
+app.get('/admin_login',function(req, res){
+    res.render("admin_log_sign",{a:'login'})
+})
+app.get('/admin',function(req,res){
+    res.render("admin_panel")
+})
 
 app.get("/payment",function(req, res){
     console.log(req.user)
     res.render("payment",{user:req.user})
 })
 
+app.get("/in/cart",function(req,res){
+    res.render("cart");
+})
+
 app.get("/info/",function(req, res){
     res.render("info")
 })
+
+app.get('/admin/add_item',function(req, res){
+    res.render('add_item');
+});
+app.post('/add_item_cart',function(req, res){
+    var Imageurl = req.body.Imageurl;
+    var FoodItem =req.body.Item_name; 
+    var HotelAddress = req.body.Hotel_address; 
+    var catagories =req.body.Catagories;
+    var Price=req.body.Price;
+    var Added_by=req.admin;
+    var data = { 
+        "Imageurl": Imageurl, 
+        "FoodItem":FoodItem, 
+        "HotelAddress":HotelAddress, 
+        "catagories":catagories,
+        "Price":Price,
+        "Added_by":Added_by 
+    } 
+    items.insert(data,function(err, collection){ 
+        if (err) throw err; 
+        console.log("Record inserted Successfully");
+        console.log(data);
+              
+    }); 
+          
+    return res.redirect('/admin/add_item'); 
+})
+
+// item selected from user added to the users area
+app.post("/item_selected",function(req,res){
+    var user = req.body.user_id;
+    var item_selected_user = req.body.food_item_selected;
+    User.updateOne({'_id':user},{$s:{'price': price}})
+});
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
