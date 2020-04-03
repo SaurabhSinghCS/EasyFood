@@ -1,49 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" id="html2">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://the-vr7.github.io/Hello-World/animations.css">
-    <script>
-        onload = start;
-        function start() {
-            var im1 = "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/banner12.jpg')"
-            var im2 = "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/img3.jpg')"
-            var im3 = "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/img2.jpg')"
-            var im4 = "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/img-5.jpg')"
-            var im5 = "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/img-4.jpg')"
-            var im6 = "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/slide_2.jpg')"
-            var i = 0;
-            function Move() {
-                i = (i % 5) + 1; // 5 is the Number of image in slider
-                if (i == 1) {
-                    document.getElementById('img').style.backgroundImage = im1
-                }
-                else if (i == 2) {
-                    document.getElementById('img').style.backgroundImage = im2
-                }
-                else if (i == 3) {
-                    document.getElementById('img').style.backgroundImage = im3
-                }
-                else if (i == 4) {
-                    document.getElementById('img').style.backgroundImage = im4
-                }
-                else if (i == 5) {
-                    document.getElementById('img').style.backgroundImage = im5
-                }
-                else {
-                    document.getElementById('img').style.backgroundImage = im6
-                }
-            }
-            setInterval(Move, 3000); //change img in 3 sec
-        }
-    </script>
+    <script lang="javascript" type="text/javascript" src="views/index.ejs"></script>
+    <script lang="javascript" type="text/javascript" src="/indexreg.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -997,22 +961,6 @@
             border: 1px solid rgba(169, 169, 169, 0.301);
         }
 
-        #Pizza {
-            display: none;
-        }
-
-        #Burger {
-            display: none;
-        }
-
-        #Paneer {
-            display: none;
-        }
-
-        #IceCream{
-            display: none;
-        }
-
         .figure-img {
             width: 100%;
             height: 112px;
@@ -1169,39 +1117,10 @@
 </head>
 
 <body>
-    <header class="top-navbar" id="navbar11">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand">
-                    <img src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/Capturefgf.PNG"
-                        class="navbar1" alt="">
-                    <img src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/Capture.PNG"
-                        class="navbar2" alt="" style="background: hidden;">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food"
-                    aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbars-rs-food">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="#aboutus">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#menubox">Menu</a></li>
-                        <li class="nav-item"><a class="nav-link"
-                                onclick="document.getElementById('id01').style.display='block'"
-                                style="width:auto; cursor: pointer;">Log in</a></li>
-                        <li class="nav-item"><a class="nav-link"
-                                onclick="document.getElementById('id02').style.display='block'"
-                                style="width:auto; cursor: pointer;">Sign up</a></li>
-                </div>
-            </div>
-            </div>
-        </nav>
-    </header>
-
     <div id="id01" class="modal">
         <div class="boxlog">
             <h1>Login</h1>
-            <form method="POST" action="/login" class="animate" id="myform">
+            <form method="POST" action="/admin_login" class="animate" id="myform">
                 <div class="inputbox">
                     <input type="text" name="username" required>
                     <label> username </label>
@@ -1216,7 +1135,6 @@
                 <h5 style="color: white;">Don't have an account &nbsp;&nbsp;&nbsp;&nbsp;<a style="position: absolute;color: blue;" hover
                         onclick="document.getElementById('id02').style.display='block' , document.getElementById('id01').style.display='none'">
                         &nbsp;Sign up</a></h5>
-                <div style="color: white;">Login as admin &nbsp;&nbsp;<a href="/admin_login">click here</a></div>
                 <div class="container1" style="background-color: transparent">
                     <button type="button" onclick="document.getElementById('id01').style.display='none'"
                         class="cancelbtn">Cancel</button>
@@ -1228,7 +1146,7 @@
     <div id="id02" class="modal">
         <div class="boxlog">
             <h2 id="reg1">Register Yourself</h2>
-            <form method="POST" action="/register" class="animate" id="myform1">
+            <form method="POST" action="/admin_register" class="animate" id="myform1">
                 <div class="inputbox">
                     <input type="text" name="name" required>
                     <label>Enter Your Name</label>
@@ -1237,6 +1155,11 @@
                 <div class="inputbox">
                     <input type="email" name="email" required>
                     <label>Email</label>
+                </div>
+                <br>
+                <div class="inputbox">
+                    <input type="text" name="mob_number" maxlength="10" minlength="10" required>
+                    <label>Mobile Number</label>
                 </div>
                 <br>
                 <div class="inputbox">
@@ -1250,11 +1173,10 @@
                 <br>
                 <button type="submit"
                     style="letter-spacing: 2px; font-size: 19px; margin-top: 15px; margin-left: 95px;">Register</button>
-                <br><br>
+                <br>
                 <h5 style="color: white;">Already have an account &nbsp;&nbsp;&nbsp;&nbsp;<a style="position: absolute;"
                         onclick="document.getElementById('id02').style.display='none' , document.getElementById('id01').style.display='block'">
                         &nbsp;Log in</a></h5>
-                <div style="color: white;">Register as admin <a href="/admin_register">&nbsp;&nbsp;click here</a></div>
                 <div class="container1" style="background-color: transparent">
                     <button type="button" onclick="document.getElementById('id01').style.display='none'"
                         class="cancelbtn">Cancel</button>
@@ -1262,468 +1184,15 @@
             </form>
         </div>
     </div>
-
+    <div id="to_be_viewed" style="display: none;" value="<%= a %>"></div>
     <script>
-        var modal = document.getElementById('id01');
-        var modal2 = document.getElementById('id02');
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                document.getElementById("myform").reset();
-                modal.style.display = "none";
-            }
-            if (event.target == modal2) {
-                modal2.style.display = "none";
-                document.getElementById("myform1").reset();
-            }
-        } 
-    </script>
-
-    <section class="header" id="img"
-        style="background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/slide_2.jpg')">
-        <div style="display: none;">
-            <img src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/banner12.jpg"
-                alt="" style="visibility: hidden;"><img
-                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/img3.jpg"
-                alt="" style="visibility: hidden;"><img
-                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/img2.jpg"
-                alt="" style="visibility: hidden;"><img
-                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/img-5.jpg"
-                alt="" style="visibility: hidden;"><img
-                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/img-4.jpg"
-                alt="" style="visibility: hidden;">
-
-        </div>
-        <div class="cont1">
-            <div id="cool"></div>
-            <div id="cool1"></div>
-            <section class="rw-wrapper">
-                <div class="rw-words-1">
-                    <span>Network of over 5000 Restaurants</span>
-                </div>
-                <div class="rw-words-2">
-                    <span>To Order Online</span>
-                </div>
-            </section>
-        </div>
-        <div class="input-group">
-            <form action="">
-                <input type="text" class="form-control" id="myText12" placeholder="Enter the type of Food">
-                <img src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/sricon.png"
-                    id="icon" class="iconic">
-                <button type="submit" class="input-group-text btn"> <a href="#menubox" id="search123" onclick="searc()"
-                        style="color: white;">Search</a></button>
-            </form>
-        </div>
-    </section>
-
-    <div class="anima1 animatedParent animateOnce">
-        <span class="slower animated fadeInUp box">Ordering food was never so easy</span>
-        <br><br><br>
-        <div class="lin1 slow animated fadeInDown box"></div>
-        <pre id="st1" class="slower animated fadeInUp box delay-500">Just 4 steps follow</pre>
-        <div class="lin2 slow animated fadeInDown box"></div>
-        <div class="imgs">
-            <img class="animated fadeInLeft box delay-500" id="one"
-                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/one.png">
-            <img class="animated fadeInLeft box delay-1000" id="one1"
-                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/two.png">
-            <img class="animated fadeInLeft box delay-1500" id="one2"
-                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/thrww.png">
-            <img class="animated fadeInLeft box delay-2000" id="one3"
-                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/four.png">
-        </div>
-    </div>
-
-    <section class="features">
-        <h1 style="text-align: center; padding-bottom: 30px; font-family: sans-serif;font-weight: 700; color: white;">
-            Featured
-            Food Items</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <div class="feature-img">
-                            <img src="https://www.dominos.co.in/files/items/IndianTandooriPaneer.jpg"
-                                style="height: 200px;">
-                        </div>
-                        <span class="price">450 INR</span> &nbsp
-                        <span class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                        </span>
-                        <div class="placename">
-                            <h3>Indi Tandoori Pizza</h3>
-                            <h4>Domino's</h4>
-                        </div>
-                        <div class="summary">
-                            <p>
-                                !It is hot. It is spicy. It is oh-so-Indian. Tandoori paneer with capsicum I red paprika
-                                I mint mayo
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <div class="feature-img">
-                            <img src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/Data%20Images/McVeggi%20Burger.png"
-                                style="height: 200px;">
-                        </div>
-                        <span class="price">107 INR</span> &nbsp
-                        <span class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-
-                        </span>
-                        <div class="placename">
-                            <h3>McVeggi Burger</h3>
-                            <h4>McDonald's</h4>
-                        </div>
-                        <div class="summary">
-                            <p>
-                                A delectable patty made of green goodness, potatoes, peas, carrots and selection of
-                                Indian spices.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <div class="feature-img">
-                            <img
-                                src="https://www.whiskaffair.com/wp-content/uploads/2014/02/Shahi-Paneer-5-480x270.jpg">
-                        </div>
-                        <span class="price">165 INR</span> &nbsp
-                        <span class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                        </span>
-                        <div class="placename">
-                            <h3>Shahi Paneer</h3>
-                            <h4>Taj Family Restaurant</h4>
-                        </div>
-                        <div class="summary">
-                            <p>
-                                Shahi paneer is a preparation of paneer,
-                                consisting of a thick gravy of cream, tomatoes and Indian spices.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <section class="features1" id="menubox">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <div class="row">
-                        <div class="col-4 col-md-5">
-                            <h4 id="one">Our Menu</h4>
-                        </div>
-                        <div class="col-8 col-md-7 dotted">
-                            <hr id="lin">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-12">
-                            <div class="list-group list-group-flush">
-                                <% var catagories=[];
-                                var catagorie=[];
-                                for(var i=0;i < data.length; i++) {
-                                    if(catagories. indexOf(data[i].catagories) == -1){
-                                        catagories.push(data[i].catagories);
-                                        var k=(data[i].catagories).replace(" ","") + "id";
-                                        catagorie.push(k);
-                                    }
-                                }
-                                for(var i=0;i< catagories.length;i++){ %>
-                                <a onclick="show_catagories(this)" id="<%= catagorie[i] %>"
-                                    class="list-group-item list-group-item-action"><%= catagories[i] %></a>
-                                    <% } %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-8">
-                    <div class="row">
-                        <div class="col-5 col-md-5">
-                            <h4 id="one">Top Cuisines</h4>
-                        </div>
-                        <div class="col-7 col-md-7 dotted">
-                            <hr id="lin">
-                        </div>
-                    </div>
-                    
-    <div>
-            <% for(var j=0;j< catagories.length;j++){ %>
-                <div id='<%= (catagories[j]).replace(" ","") %>'>
-                    <!-- <div style="display: none;" id="no_items_to_be_viewd">1</div> -->
-            <% for(var i=0;i< data.length ;i += 2) { 
-                if(data[i].catagories == catagories[j]){%>
-                <div class="row">
-                    <div class="col-5 col-md-5" id="img33">
-                        <figure class="figure">
-                            <button class="cart-btn" value="<%= data[i] %>"
-                                onclick="show_cart()">Order
-                                Now</button>
-                            <img src="<%= data[i].Imageurl %>"
-                                class="figure-img img-fluid rounded" style="width: fit-content;height: fit-content;">
-                            <figcaption class="figure-caption" id="431"><%= data[i].FoodItem %></figcaption>
-                            <figcaption class="figure-caption"><span id="cap432"><%= data[i].HotelAddress %></span><br><span
-                                    id="cap433">&#8377 <%= data[i].Price %></span></figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-5 col-md-5" id="img44">
-                        <figure class="figure">
-                            <button class="cart-btn" value="Order Now"
-                                onclick="show_cart()">Order
-                                Now</button>
-                            <img src="<%= data[i+1].Imageurl %>"
-                                class="figure-img img-fluid rounded">
-                            <figcaption class="figure-caption" id="441"><%= data[i+1].FoodItem %></figcaption>
-                            <figcaption class="figure-caption"><span id="cap442"><%= data[i+1].HotelAddress %></span><br><span
-                                    id="cap443">&#8377 <%= data[i+1].Price %></span></figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <br>
-            <% }} %>
-    </div>
-    <% } %>
-    </div>
-    </section>
-    <section class="img1123">
-        <div class="container-fluid animatedParent animateOnce" id="pic22">
-            <div class="row slow animated fadeIn box">
-                <div class="col-12 col-lg-12 block11">
-                    <div class="row animatedParent animateOnce">
-                        <div class="col-lg-3 slow animated rollIn box">
-                            <h2 id="elee">Enjoy Exclusive Food<br>Order any of these</h2>
-                        </div>
-                        <div class="col-lg-2 slow animated fadeInDown box delay-500">
-                            <ul class="list-group lis22">
-                                <li class="list-group-item lis33"><i class="fa fa-arrow-right ico"
-                                        aria-hidden="true"></i>Party Order</li>
-                                <li class="list-group-item lis33"><i class="fa fa-arrow-right ico"
-                                        aria-hidden="true"></i>Fast Food</li>
-                                <li class="list-group-item lis33"><i class="fa fa-arrow-right ico"
-                                        aria-hidden="true"></i>Diet Food</li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-5 slow animated fadeIn box delay-1000">
-                            <img src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/abc.png"
-                                id="img333">
-                        </div>
-                        <div class="col-lg-2 slow animated fadeInDown box delay-1500"> <a href="#img" class="ord">ORDER
-                                NOW</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="aboutus" class="aboutus animatedParent animateOnce">
-
-
-        <div class="info slow animated fadeInUp box">
-            <img style="width: 190px; "
-                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/Capture.PNG">
-            <br>
-            <br>
-            <div style="color:grey; font-family:Verdana, Geneva, Tahoma, sans-serif; line-height: 10px;">
-                <p>Food Panda,
-
-                </p>
-                <p> GLA University</p>
-                <p>Mathura, UP</p>
-                <p>Uttar Pradesh 281001</p>
-            </div>
-            <br>
-
-            <p class="social" style="color: grey; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">
-                Follow Us &nbsp
-                <a href="#" style="color: white;"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                &nbsp <a href="#" style="color: white;"><i class="fa fa-instagram" aria-hidden="true"></i></a> &nbsp <a
-                    style="color: white;" href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-
-            </p>
-
-        </div>
-
-        <div class="uselik slow animated fadeInDown box delay-500">
-            <p style="color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">Useful Links</p>
-
-            <ul style="list-style: none;">
-                <li><a style="text-decoration: none;" target="_blank" href="/info/#section-1">FAQ</a></li>
-                <li><a style="text-decoration: none;" target="_blank" href="/info/#section-2">Terms and Condition</a>
-                </li>
-                <li><a style="text-decoration: none;" target="_blank" href="/info/#section-3">Privacy Policy</a></li>
-                <li><a style="text-decoration: none;" target="_blank" href="/info/#section-4">Terms of Use</a></li>
-                <li><a style="text-decoration: none;" target="_blank" href="/info/#section-5">Refund Policy</a></li>
-            </ul>
-            <p style="color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;" id="fdbk">Give
-                Your Valuable Feedback</p>
-            <button onclick="show_feedback()" id="fdbkbtn">Click Me</button>
-        </div>
-        <div class="gtch slow animated fadeIn box delay-1000">
-
-            <p style="color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">Get in touch</p>
-            <p style="color: grey; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px;"><i
-                    class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp vineet.rathor_cs17@gla.ac.in
-            </p>
-            <p style="color: grey; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px;"><i
-                    class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp saurabh.singh_cs17@gla.ac.in
-            </p>
-            <p style="color: grey; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px;"><i
-                    class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp rajeev.chaturvedi_cvl17@gla.ac.in
-            </p>
-        </div>
-    </section>
-
-    <section class="feedback" id="feedback1">
-        <div class="container">
-            <h1 class="h1h1">Share your problems with us</h1>
-            <br>
-            <form method="POST" id="feedform" action="/index">
-                <div class="row">
-                    <div class="col-md-4 col-12 offset-2">
-                        <div class="styled-input">
-                            <input type="text" name="Name" required />
-                            <label>Name</label>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-12">
-                        <div class="styled-input">
-                            <input type="email" name="email" required />
-                            <label>Email</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-7 col-sm-12 offset-3">
-                        <div class="styled-input">
-                            <input type="text" name="phonenumber" required />
-                            <label>Phone Number</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-md-9 offset-2">
-                        <div class="styled-input">
-                            <textarea name="text" id="textmsg" cols="2" rows="2"
-                                placeholder="Enter Your Message here"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-md-3 offset-5">
-                        <button type="submit" class="submit-btn">Send message</butto>
-                    </div>
-                </div>
-                <div class="row">
-                        <div class="col-xs-12 col-md-3 offset-5">
-                            <button type="submit" class="submit-btn" onclick="window.location.reload();">Cancel</button>
-                        </div>
-                    </div>
-            </form>
-        </div>
-    </section>
-    <script>
-        function show_cart() {
-            alert("You need to Signup or Login to Order this item")
-            document.getElementById('id01').style.display = 'block'
-            $('#id01').css("width:auto; cursor: pointer;")
+        if(document.getElementById('to_be_viewed').value == 'login'){
+            document.getElementById('id01').style.display='block'
         }
-        function disableScroll() {
-            // Get the current page scroll position 
-            scrollTop =
-                window.pageYOffset || document.documentElement.scrollTop;
-            scrollLeft =
-                window.pageXOffset || document.documentElement.scrollLeft,
-
-                // if any scroll is attempted, 
-                // set this to the previous value 
-                window.onscroll = function () {
-                    window.scrollTo(scrollLeft, scrollTop);
-                };
-        }
-        function enableScroll() {
-            window.onscroll = function () { };
-        }
-        function show_feedback() {
-            document.getElementById("html2").style.scrollBehavior = "unset";
-            document.getElementById("feedback1").style.display = "block";
-            location.href = '#feedform';
-            document.getElementById("navbar11").style.display = "none";
-            disableScroll();
-        }
-        function show_catagories(m) {
-            var catagories= <%= catagories %>;
-            var catagorie= <%= catagorie %>;
-            for(var i=0;i < catagories.length;i++){
-                document.getElementById(catagories[i]).style.display = "none";
-            }
-            for(var i=0;i < catagorie.length;i++){
-                document.getElementById(catagorie[i]).style = " background-color: white;color: black;font-size: 26px;border-radius: 5px;"
-            }
-            var t=m.id;
-            show_catagorie(t);
-            }
-        function show_catagorie(t){
-            document.getElementById(t).style = " background-color: red;color: white;font-size: 26px;border-radius: 5px;"
-            t=t.replace("id","")
-            console.log(t)
-            document.getElementById(t).style.display = "block";
-        }
-        
-        function searc() {
-            console.log("0")
-            x = document.getElementById("myText12").value;
-            if (x.toLowerCase() == "pizza") {
-                console.log("1")
-                show_pizza()
-            }
-            else if (x.toLowerCase() == "burger") {
-                show_burger()
-            }
-            else if (x.toLowerCase() == "paneer") {
-                show_paneer()
-            }
-            else if (x.toLowerCase() == "ice cream" || x.toLowerCase() == "icecream") {
-                show_icecream()
-            }
-            else {
-                alert("Sorry We don't have this item")
-            }
+        else{
+            document.getElementById('id02').style.display='block'
         }
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://the-vr7.github.io/Hello-World/css3-animate-it.js"></script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>

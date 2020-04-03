@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .nav-item:hover {
+            background: #d65106;
+            color: #ffffff;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="top-navbar">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="https://image.slidesharecdn.com/easyfood-120402102210-phpapp02/95/easy-food-1-728.jpg?cb=1333362369"
+                    alt="logo" style="width:60px;">
+            </a>
+            <!-- <div class="navbar-header justify-content-center" style="text-align: center;">hiihbjk</div> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" style="background-color: #d65106; align-self: auto;" id="collapsibleNavbar" style="float: right;">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                            data-toggle="dropdown" area-haspopup="true" aria-expanded="false">Food Items</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="admin/add_item">Add Item</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="admin/delete_item">Delete Item</a>
+                        </div>
+                    </li>
+                    <li class="nav-item ni">
+                        <a class="nav-link" href="#">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile Check</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Profile Check</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <br>
+</body>
+
+</html>
