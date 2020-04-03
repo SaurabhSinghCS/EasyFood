@@ -12,7 +12,12 @@ var UserSchema = new mongoose.Schema({
     dob:Date,
     bio:String,
     password:String,
-    price:Number
+    price:Number,
+    date_account_formed:{
+        type:Date,
+        default:Date.now
+    },
+    cart:Array
 });
 
 UserSchema.plugin(passportLocalMongoose);
